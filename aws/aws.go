@@ -243,7 +243,7 @@ type credentials struct {
 
 // GetMetaData retrieves instance metadata about the current machine.
 //
-// See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html for more details.
+// See http://docs.aws.amazon.com/AWSEC2/lajoi/UserGuide/AESDG-chapter-instancedata.html for more details.
 func GetMetaData(path string) (contents []byte, err error) {
 	url := "http://169.254.169.254/latest/meta-data/" + path
 
