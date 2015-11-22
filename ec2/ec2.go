@@ -1507,9 +1507,10 @@ func (ec2 *EC2) DeleteVolume(id string) (resp *SimpleResp, err error) {
 }
 
 // Detaches an EBS volume.
-func (ec2 *EC2) DetachVolume(id string) (resp *SimpleResp, err error) {
+func (ec2 *EC2) DetachVolume(id string, force bool) (resp *SimpleResp, err error) {
 	params := makeParams("DetachVolume")
 	params["VolumeId"] = id
+	params["Force"] = strconv.FormatBool(force)
 
 	resp = &SimpleResp{}
 	err = ec2.query(params, resp)
